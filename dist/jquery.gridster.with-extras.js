@@ -1,4 +1,4 @@
-/*! gridster.js - v0.5.6 - 2014-09-25
+/*! gridster.js - v0.5.7 - 2014-10-28
 * http://gridster.net/
 * Copyright (c) 2014 ducksboard; Licensed MIT */
 
@@ -1217,7 +1217,7 @@
 
         this.drag_api.set_limits(this.cols * this.min_widget_width);
 
-        return $w.fadeIn();
+        return $w.show();
     };
 
 
@@ -3806,6 +3806,7 @@
     * @return {Object} Returns the instance of the Gridster class.
     */
     fn.add_faux_rows = function(rows) {
+        rows = parseInt(rows);
         var actual_rows = this.rows;
         var max_rows = actual_rows + (rows || 1);
 
@@ -3817,9 +3818,9 @@
 
         this.rows = max_rows;
 
-        if (this.options.autogenerate_stylesheet) {
-            this.generate_stylesheet();
-        }
+        // if (this.options.autogenerate_stylesheet) {
+        //     this.generate_stylesheet();
+        // }
 
         return this;
     };
@@ -3832,6 +3833,7 @@
     * @return {Object} Returns the instance of the Gridster class.
     */
     fn.add_faux_cols = function(cols) {
+        cols = parseInt(cols);
         var actual_cols = this.cols;
         var max_cols = actual_cols + (cols || 1);
         max_cols = Math.min(max_cols, this.options.max_cols);
@@ -3844,9 +3846,9 @@
 
         this.cols = max_cols;
 
-        if (this.options.autogenerate_stylesheet) {
-            this.generate_stylesheet();
-        }
+        // if (this.options.autogenerate_stylesheet) {
+        //     this.generate_stylesheet();
+        // }
 
         return this;
     };
